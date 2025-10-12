@@ -6,7 +6,7 @@ description: "공식 링크로 3분 가입 · KYC · 2FA 설정까지"
 # OKX 가입 방법 (2025 최신)
 
 ## 1) 공식 링크 접속
-➡️ **[OKX 가입 바로가기](https://www.okx.com/join/XXXX)**
+➡️ **[OKX 가입 바로가기](https://www.okx.com/join/94891319)**
 
 ## 2) 회원가입
 - 이메일/휴대폰 입력 → 인증코드 확인
@@ -20,4 +20,4 @@ description: "공식 링크로 3분 가입 · KYC · 2FA 설정까지"
 
 ---
 
-**✅ [OKX 공식 가입 링크(수수료 20% 할인)](https://www.okx.com/join/XXXX)**
+**✅ [OKX 공식 가입 링크(수수료 20% 할인)](https://www.okx.com/join/94891319)**
