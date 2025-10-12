@@ -30,7 +30,7 @@ outputs:
   home: [HTML, RSS, JSON]
 
 permalinks:
-  guide: "/guide/:slug/"
+  guide: "/guide/"
 
 enableRobotsTXT: true
 sitemap:

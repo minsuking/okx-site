@@ -1,6 +1,9 @@
 ---
 title: "OKX 거래소 이용 방법 (입금/현물/출금)"
 description: "국내거래소 → OKX 입금, 현물거래, 출금까지 한 번에"
+slug: "manual"
+type: "guide"
+draft: false
 ---
 
 # OKX 거래소 이용 방법

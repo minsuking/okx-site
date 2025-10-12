@@ -1,6 +1,9 @@
 ---
 title: "OKX 추천인 변경 (Referral Reset)"
 description: "기존 계정 추천 코드 리셋/재등록 가이드"
+slug: "referral-reset"
+type: "guide"
+draft: false
 ---
 
 # OKX 추천인 변경 (Referral Reset)

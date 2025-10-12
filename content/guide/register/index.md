@@ -1,6 +1,9 @@
 ---
 title: "OKX 가입 방법 (2025 최신)"
 description: "공식 링크로 3분 가입 · KYC · 2FA 설정까지"
+slug: "register"
+type: "guide"
+draft: false
 ---
 
 # OKX 가입 방법 (2025 최신)
