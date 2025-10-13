@@ -1,0 +1,5 @@
+{{- $href := .Get "href" -}}
+<a class="jh-btn {{ if .Get "variant" }}jh-btn--{{ .Get "variant" }}{{ end }}"
+   href="{{ $href }}" target="_blank" rel="noopener noreferrer">
+  {{- .Inner -}}
+</a>

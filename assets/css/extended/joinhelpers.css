@@ -1,0 +1,7 @@
+.jh-btn{
+    display:inline-block;padding:.9rem 1.1rem;border-radius:12px;
+    border:1px solid #e5e7eb;text-decoration:none;font-weight:700;
+  }
+  .jh-btn:hover{transform:translateY(-1px)}
+  .jh-btn--primary{background:#111;color:#fff;border-color:#111}
+  
