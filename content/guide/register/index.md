@@ -56,7 +56,10 @@ OKX에 가입하려면 아래 준비물을 미리 준비해 주세요.
 
 ### 1️⃣ 공식 가입 링크 접속
 
-{{< btn href="https://www.okx.com/join/94891319" >}}✅ OKX 가입 바로가기 (수수료 20% 할인){{< /btn >}}
+{{< btn href="https://www.okx.com/join/94891319" variant="primary" >}}
+✅ OKX 공식 가입 (수수료 20% 할인)
+{{< /btn >}}
+
 
 위 버튼을 클릭하면 OKX 공식 가입 페이지로 이동합니다.  
 가입 시 위 링크를 사용하시면 **거래 수수료 20% 할인 혜택**을 자동으로 받게 됩니다.
@@ -125,7 +128,10 @@ OKX에 가입하려면 아래 준비물을 미리 준비해 주세요.
 OKX는 글로벌 유저가 가장 많이 사용하는 거래소 중 하나이며,  
 **수수료 할인 + 다양한 이벤트 보너스**가 자주 진행됩니다.
 
-{{< btn href="https://www.okx.com/join/94891319" >}}👉 OKX 공식 가입 링크 (20% 수수료 할인 받기){{< /btn >}}
+{{< btn href="https://www.okx.com/join/94891319" variant="primary" >}}
+✅ OKX 공식 가입 (수수료 20% 할인)
+{{< /btn >}}
+
 
 ---
 
@@ -143,5 +149,6 @@ OKX는 글로벌 유저가 가장 많이 사용하는 거래소 중 하나이며
 
 **OKX 거래소 가입은 3분이면 충분합니다.**  
 지금 바로 시작해 보세요 👇  
-
-{{< btn href="https://www.okx.com/join/94891319" >}}✅ OKX 거래소 가입하러 가기{{< /btn >}}
+{{< btn href="https://www.okx.com/join/94891319" variant="primary" >}}
+✅ OKX 거래소 가입하러 가기
+{{< /btn >}}

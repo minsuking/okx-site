@@ -1,7 +1,31 @@
-.jh-btn{
-    display:inline-block;padding:.9rem 1.1rem;border-radius:12px;
-    border:1px solid #e5e7eb;text-decoration:none;font-weight:700;
+/* 기본 버튼 */
+.jh-btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
   }
-  .jh-btn:hover{transform:translateY(-1px)}
-  .jh-btn--primary{background:#111;color:#fff;border-color:#111}
+  
+  /* hover 효과 */
+  .jh-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  
+  /* 프라이머리(검정색) 버튼 */
+  .jh-btn--primary {
+    background-color: #111;
+    color: #fff !important;
+    border-color: #111;
+  }
+  
+  .jh-btn--primary:hover {
+    background-color: #000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
   
