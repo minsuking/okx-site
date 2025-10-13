@@ -29,8 +29,8 @@ menu:
 outputs:
   home: [HTML, RSS, JSON]
 
-permalinks:
-  guide: "/guide/"
+#permalinks:
+#  guide: "/guide/"
 
 enableRobotsTXT: true
 sitemap:
