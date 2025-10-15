@@ -1,38 +1,41 @@
-baseURL: "https://okx.joinhelpers.com/"
+baseURL: "https://bingx.joinhelpers.com/"
 languageCode: "ko-kr"
-title: "OKX 가이드 (2025 최신) | JoinHelpers"
+title: "BingX 가입 가이드 | JoinHelpers"
 theme: "PaperMod"
+enableRobotsTXT: true
 
 params:
-  defaultTheme: auto
+  defaultTheme: "light"
+  disableThemeToggle: true
   ShowReadingTime: false
-  ShowCodeCopyButtons: true
-  description: "OKX 가입·이용·추천인 변경(리셋)까지 한 번에 끝내는 2025 최신 공식 가이드"
-  author: "JoinHelpers"
-  env: production
+  comments: false
 
 menu:
   main:
-    - name: 가입 방법
-      url: /guide/register/
+    - name: "PC 가입"
+      url: "/guide/pc-register/"
       weight: 1
-    - name: 이용 방법
-      url: /guide/manual/
+    - name: "모바일 가입"
+      url: "/guide/mobile-register/"
       weight: 2
-    - name: 추천인 변경
-      url: /guide/referral-reset/
+    - name: "KYC 이전"
+      url: "/guide/kyc-migration/"
       weight: 3
-    - name: FAQ
-      url: /faq/
+    - name: "입금 방법"
+      url: "/guide/deposit/"
       weight: 4
+    - name: "거래 방법"
+      url: "/guide/trade/"
+      weight: 5
+    - name: "이벤트"
+      url: "/event/"
+      weight: 6
 
-outputs:
-  home: [HTML, RSS, JSON]
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
-#permalinks:
-#  guide: "/guide/"
-
-enableRobotsTXT: true
 sitemap:
   changefreq: daily
   priority: 0.7
