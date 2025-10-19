@@ -34,3 +34,8 @@ sitemap:
   changefreq: daily
   priority: 0.7
   filename: sitemap.xml
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true   # raw HTML 허용 (버튼 <a> 스타일용)
