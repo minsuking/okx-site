@@ -11,20 +11,20 @@ params:
   author: "JoinHelpers"
   env: production
 
-menu:
-  main:
-    - name: 가입 방법
-      url: /guide/register/
-      weight: 1
-    - name: 이용 방법
-      url: /guide/manual/
-      weight: 2
-    - name: 추천인 변경
-      url: /guide/referral-reset/
-      weight: 3
-    - name: FAQ
-      url: /faq/
-      weight: 4
+# menu:
+#   main:
+#     - name: 가입 방법
+#       url: /guide/register/
+#       weight: 1
+#     - name: 이용 방법
+#       url: /guide/manual/
+#       weight: 2
+#     - name: 추천인 변경
+#       url: /guide/referral-reset/
+#       weight: 3
+#     - name: FAQ
+#       url: /faq/
+#       weight: 4
 
 outputs:
   home: [HTML, RSS, JSON]
