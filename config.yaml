@@ -10,21 +10,8 @@ params:
   description: "OKX 가입·이용·추천인 변경(리셋)까지 한 번에 끝내는 2025 최신 공식 가이드"
   author: "JoinHelpers"
   env: production
-
-# menu:
-#   main:
-#     - name: 가입 방법
-#       url: /guide/register/
-#       weight: 1
-#     - name: 이용 방법
-#       url: /guide/manual/
-#       weight: 2
-#     - name: 추천인 변경
-#       url: /guide/referral-reset/
-#       weight: 3
-#     - name: FAQ
-#       url: /faq/
-#       weight: 4
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
 
 outputs:
   home: [HTML, RSS, JSON]
@@ -40,4 +27,4 @@ mainSections: []
 markup:
   goldmark:
     renderer:
-      unsafe: true   # raw HTML 허용 (버튼 <a> 스타일용)
+      unsafe: true
