@@ -1,19 +1,30 @@
-+++
-title = "OKX 거래소 가입 및 KYC 인증 가이드 (2025년 최신)"
-description = "OKX 거래소 가입을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 절차, 본인인증(KYC) 과정, 보안 설정 방법까지 단계별로 정리했습니다."
-slug = "how-to-sign-up-on-okx-step-by-step"
-type = "pages"
-draft = false
-keywords = ["OKX", "OKX 가입", "OKX 거래소", "OKX KYC", "OKX 인증", "OKX 수수료", "OKX 가입방법", "해외거래소 가입 절차", "암호화폐 거래소 가이드", "코인 입출금 방법"]
-robots = "index, follow"
-canonicalURL = "https://www.joinhelpers.com/edu/how-to-sign-up-on-okx-step-by-step/"
-outputs = ["HTML"]
+---
+title: "OKX 거래소 가입 및 KYC 인증 가이드 (2025년 최신)"
+description: "OKX 거래소 가입을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 절차, 본인인증(KYC) 과정, 보안 설정 방법까지 단계별로 정리했습니다."
+slug: "how-to-sign-up-on-okx-step-by-step"
+type: "pages"
+draft: false
+keywords:
+  - "OKX"
+  - "OKX 가입"
+  - "OKX 거래소"
+  - "OKX KYC"
+  - "OKX 인증"
+  - "OKX 수수료"
+  - "OKX 가입방법"
+  - "해외거래소 가입 절차"
+  - "암호화폐 거래소 가이드"
+  - "코인 입출금 방법"
+robots: "index, follow"
+canonicalURL: "https://okx.joinhelpers.com"
+outputs:
+  - "HTML"
 
-[build]
-  render = "always"
-  list = "always"
-  publishResources = true
-+++
+build:
+  render: "always"
+  list: "always"
+  publishResources: true
+---
 
 ---
 
