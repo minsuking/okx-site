@@ -35,6 +35,8 @@ sitemap:
   priority: 0.7
   filename: sitemap.xml
 
+mainSections: []
+
 markup:
   goldmark:
     renderer:
