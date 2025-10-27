@@ -1,7 +1,6 @@
 ---
 title: "OKX 거래소 가입 및 KYC 인증 가이드 (2025년 최신)"
 description: "OKX 거래소 가입을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 절차, 본인인증(KYC) 과정, 보안 설정 방법까지 단계별로 정리했습니다."
-slug: "how-to-sign-up-on-okx-step-by-step"
 type: "pages"
 draft: false
 keywords:
@@ -27,6 +26,9 @@ build:
 ---
 
 ---
+# OKX 거래소 가입 및 KYC 인증 가이드 (2025년 최신)
+
+OKX 거래소 가입을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 절차, 본인인증(KYC) 과정, 보안 설정 방법까지 단계별로 정리했습니다.
 
 ## 1️⃣ OKX란 무엇인가요?
 
