@@ -48,15 +48,6 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 > ※ 본 가이드는 **가입 절차를 학습하기 위한 참고 자료**입니다.
 
 ---
-
-<a href="https://www.okx.com/join/94891319"
-   target="_blank"
-   rel="noopener nofollow sponsored">
-  <img src="/images/join-okx/index.png" alt="OKX 가입 절차 개요 이미지" style="max-width:100%; border-radius:12px;">
-</a>
-
----
-
 ## 2️⃣ OKX 가입 절차 (모바일 기준)
 
 모바일 기기를 기준으로 한 가입 절차는 다음과 같습니다.  
@@ -151,9 +142,6 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 </div>
 
 ---
-
-#OKX #OKX거래소 #OKX가입 #OKX인증 #OKX가이드 #KYC절차 #해외거래소가입 #암호화폐교육 #JoinHelpers
-
 <style>
 .okx-cta{
   display:flex; justify-content:center; align-items:center;
