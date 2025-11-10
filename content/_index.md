@@ -24,13 +24,22 @@ build:
   list: "always"
   publishResources: true
 ---
+# OKX 거래소 가입 방법 및 KYC 인증 가이드 (2025년 최신)
 
----
-# OKX 거래소 가입 및 KYC 인증 가이드 (2025년 최신)
+OKX 거래소 가입 방법을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 방법, 본인인증(KYC) 방법, 보안 설정 방법까지 단계별로 정리했습니다.
 
-OKX 거래소 가입을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 절차, 본인인증(KYC) 과정, 보안 설정 방법까지 단계별로 정리했습니다.
+<div align="center">
+<div class="okx-cta">
+  <a href="/go/okx-next/"
+     class="okx-btn"
+     target="_blank"
+     rel="noopener nofollow sponsored">
+    🖤 OKX 공식 페이지 이동하기
+  </a>
+</div>
+</div>
 
-## 1️⃣ OKX란 무엇인가요?
+## 1️⃣ OKX 거래소란 무엇인가요?
 
 OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,  
 코인마켓캡(CoinMarketCap) 기준 **거래량 상위권**에 포함되어 있습니다.  
@@ -48,25 +57,12 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 > ※ 본 가이드는 **가입 절차를 학습하기 위한 참고 자료**입니다.
 
 ---
-## 2️⃣ OKX 가입 절차 (모바일 기준)
+## 2️⃣ OKX 거래소 가입 방법
 
 모바일 기기를 기준으로 한 가입 절차는 다음과 같습니다.  
 회원가입은 약 **3분 내외**로 완료할 수 있습니다.
 
-<div align="center">
-<div class="okx-cta">
-  <a href="https://www.okx.com/join/94891319"
-     class="okx-btn"
-     target="_blank"
-     rel="noopener nofollow sponsored">
-    🖤 OKX 공식 페이지 이동하기
-  </a>
-</div>
-</div>
-
----
-
-### 가입 단계별 안내
+### OKX 거래소 회원가입 단계별 안내
 
 1. **거주지 선택:** “대한민국(South Korea)” 선택 후 약관 동의  
    ![OKX 가입 단계1](/images/join-okx/모바일_oxk_가입방법1.jpg)
@@ -89,7 +85,8 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 
 ---
 
-## 3️⃣ 본인 인증 (KYC) 절차
+
+## 3️⃣ OKX 회원가입 본인 인증 (KYC) 절차
 
 계정 개설 후에는 본인 확인(KYC)을 진행해야 합니다.  
 이는 **입출금 제한 해제** 및 **보안 강화**를 위한 필수 단계입니다.
@@ -113,8 +110,7 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 영업일 기준 약 5분 이내 (즉시 승인되는 경우도 있음)
 
 ---
-
-## 4️⃣ KYC 완료 후 확인할 점
+## 4️⃣ OKX 가입 KYC 완료 후 확인할 점
 
 | 구분 | 내용 |
 |------|------|
@@ -132,7 +128,7 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 
 <div align="center">
 <div class="okx-cta">
-  <a href="https://www.okx.com/join/94891319"
+  <a href="/go/okx-next/"
      class="okx-btn"
      target="_blank"
      rel="noopener nofollow sponsored">

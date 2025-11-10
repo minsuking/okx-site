@@ -1,0 +1,112 @@
+{{- /* ===== RankMath-like SEO partial (safe) ===== */ -}}
+{{- $p := . -}}
+
+{{- /* title: trim 은 2인자 필요 */ -}}
+{{- $title := cond (gt (len (trim $p.Title " \t\n\r")) 0) $p.Title (printf "%s | %s" $p.Site.Title $p.Site.Params.subtitle) -}}
+
+{{- /* description: page description 우선, 없으면 summary 사용 */ -}}
+{{- $desc := or $p.Params.description (( $p.Summary | plainify ) | truncate 160) -}}
+
+{{- /* keywords: nil-safe */ -}}
+{{- $kw := "" -}}
+{{- with $p.Params.keywords -}}
+  {{- $kw = delimit . ", " -}}
+{{- end -}}
+
+{{- $url := $p.Permalink -}}
+{{- $siteName := or $p.Site.Title "JoinHelpers" -}}
+
+{{- /* images: string | [](interface|string) 모두 커버 + 절대경로 보장, kindIs/first 미사용 */ -}}
+{{- $img := "" -}}
+{{- with $p.Params.images -}}
+  {{- $typ := printf "%T" . -}}
+  {{- if or (eq $typ "[]string") (eq $typ "[]interface {}") -}}
+    {{- if gt (len .) 0 -}}
+      {{- $img = index . 0 -}}
+    {{- end -}}
+  {{- else if eq $typ "string" -}}
+    {{- $img = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $img -}}
+  {{- $img = (print $p.Site.BaseURL "images/og-default.jpg") -}}
+{{- end -}}
+{{- $img = $img | absURL -}}
+
+{{- /* robots */ -}}
+{{- $robotsIndex := (cond (isset $p.Params "noindex") (not $p.Params.noindex) true) -}}
+{{- $robots := cond $robotsIndex "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" "noindex,nofollow" -}}
+
+{{- /* dates */ -}}
+{{- $published := or $p.Params.date $p.Date -}}
+{{- $modified := or $p.Params.lastmod $p.Lastmod $published -}}
+
+{{- /* type: guide/page 는 Article 취급 */ -}}
+{{- $isArticle := or (eq $p.Type "post") (eq $p.Kind "page") (in (lower $p.File.Path) "/guide/") -}}
+
+<!-- ============ Basic / RankMath-like ============ -->
+<title>{{ $title | html }}</title>
+<meta name="description" content="{{ $desc | html }}">
+{{- if $kw }}<meta name="keywords" content="{{ $kw | html }}">{{ end -}}
+<link rel="canonical" href="{{ $url }}">
+<meta name="robots" content="{{ $robots }}">
+
+<!-- ============ Open Graph ============ -->
+<meta property="og:type" content="{{ if $isArticle }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $title | html }}">
+<meta property="og:description" content="{{ $desc | html }}">
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:site_name" content="{{ $siteName | html }}">
+<meta property="og:image" content="{{ $img }}">
+
+<!-- ============ Twitter Card ============ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title | html }}">
+<meta name="twitter:description" content="{{ $desc | html }}">
+<meta name="twitter:image" content="{{ $img }}">
+
+<!-- ============ Hreflang (ko 기본) ============ -->
+<link rel="alternate" href="{{ $url }}" hreflang="ko">
+<link rel="alternate" href="{{ $url }}" hreflang="x-default">
+
+<!-- ============ Breadcrumb JSON-LD ============ -->
+{{- $bc := slice (dict "@type" "ListItem" "position" 1 "name" $siteName "item" $p.Site.BaseURL) -}}
+{{- if gt (len (split (relURL $p.RelPermalink) "/")) 1 -}}
+  {{- $segs := (where (split (relURL $p.RelPermalink) "/") "ne" "") -}}
+  {{- $path := "" -}}
+  {{- range $i, $s := $segs -}}
+    {{- $path = (print $path "/" $s) -}}
+    {{- $bc = $bc | append (dict "@type" "ListItem" "position" (add $i 2) "name" $s "item" (print $p.Site.BaseURL (trim $path "/"))) -}}
+  {{- end -}}
+{{- end -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": {{ $bc | jsonify }}
+}
+</script>
+
+<!-- ============ Article/WebPage JSON-LD ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if $isArticle }}Article{{ else }}WebPage{{ end }}",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ $url }}" },
+  "headline": {{ $title | jsonify }},
+  "description": {{ $desc | jsonify }},
+  "image": [{{ $img | jsonify }}],
+  {{- if $published }}"datePublished": "{{ (time $published).Format "2006-01-02T15:04:05Z07:00" }}",{{ end -}}
+  {{- if $modified }}"dateModified": "{{ (time $modified).Format "2006-01-02T15:04:05Z07:00" }}",{{ end -}}
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ $siteName | jsonify }},
+    "logo": { "@type": "ImageObject", "url": {{ (print $p.Site.BaseURL "images/logo.png") | jsonify }} }
+  }
+}
+</script>
+
+<!-- ============ Optional: Naver Site Verification ============ -->
+{{- with $p.Site.Params.naver_site_verification -}}
+<meta name="naver-site-verification" content="{{ . }}">
+{{- end -}}

@@ -1,21 +1,24 @@
 {{- $adv := .Site.Params.advertiser -}}
 {{- if and $adv $adv.name $adv.email -}}
 <style>
-  .adv-box{margin-top:1.25rem;padding:0.75rem 1rem;border:1px solid var(--border);border-radius:0.75rem;font-size:.92rem;opacity:.9}
+  .adv-box{margin-top:1.25rem;padding:0.75rem 1rem;border:1px solid var(--border);
+  border-radius:0.75rem;font-size:.92rem;opacity:.9}
   .adv-box b{font-weight:600}
   .adv-box small{display:block;margin-top:.25rem;opacity:.8}
 </style>
+
 <div class="adv-box" aria-label="광고주 연락처">
   <b>사이트 정보</b><br/>
   성명: {{ $adv.name }}<br/>
   이메일: <a rel="nofollow" href="#" id="adv-mail">[클릭하여 보기]</a>
-  <small>본 페이지는 제휴(광고) 콘텐츠를 포함할 수 있습니다.</small>
+  <small>© 2025 JoinHelpers — 본 문서는 정보 제공용이며, 투자 권유가 아닙니다. 또한, 어떠한 지적재산권 또한 침해하지 않고 있음을 명시합니다. 조회, 신청 및 다운로드와 같은 편의 서비스에 관한 내용은 관련 처리기관 홈페이지를 참고하시기 바랍니다.
+			</small>
 </div>
 
 <script>
   // 간단한 이메일 난독화(봇 수집 방지)
   (function(){
-    var p1 = "pepsi4040", p2 = "naver", p3 = "com";
+    var p1 = "joomi.kim.seo", p2 = "gmail", p3 = "com";
     var e = p1 + "@" + p2 + "." + p3;
     var a = document.getElementById("adv-mail");
     if(a){ a.href = "mailto:" + e; a.textContent = e; }
