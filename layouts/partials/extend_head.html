@@ -3,4 +3,8 @@
   --------------------------------*/}}
   
   {{/* guide/join 페이지만 RankMath 메타 실행 (슬래시 포함) */}}
+{{/* RankMath/SEO 메타는 실제 컨텐츠 페이지(.IsPage)에서만 렌더 */}}
+{{ if .IsPage }}
   {{ partial "seo-rankmath.html" . }}
+{{ end }}
+

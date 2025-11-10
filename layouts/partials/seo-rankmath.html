@@ -1,11 +1,11 @@
 {{- /* ===== RankMath-like SEO partial (safe) ===== */ -}}
 {{- $p := . -}}
 
-{{- /* title: trim 은 2인자 필요 */ -}}
+{{- /* title: 제목이 없으면 사이트 제목 + 부제 조합 */ -}}
 {{- $title := cond (gt (len (trim $p.Title " \t\n\r")) 0) $p.Title (printf "%s | %s" $p.Site.Title $p.Site.Params.subtitle) -}}
 
-{{- /* description: page description 우선, 없으면 summary 사용 */ -}}
-{{- $desc := or $p.Params.description (( $p.Summary | plainify ) | truncate 160) -}}
+{{- /* description: page description 우선, 없으면 summary 사용 (160자 내) */ -}}
+{{- $desc := or $p.Params.description ( ( $p.Summary | plainify ) | truncate 160 ) -}}
 
 {{- /* keywords: nil-safe */ -}}
 {{- $kw := "" -}}
@@ -13,10 +13,11 @@
   {{- $kw = delimit . ", " -}}
 {{- end -}}
 
+{{- /* 기본 URL/사이트명 */ -}}
 {{- $url := $p.Permalink -}}
 {{- $siteName := or $p.Site.Title "JoinHelpers" -}}
 
-{{- /* images: string | [](interface|string) 모두 커버 + 절대경로 보장, kindIs/first 미사용 */ -}}
+{{- /* images: string | []string | []interface 모두 대응 + 절대경로 보장 */ -}}
 {{- $img := "" -}}
 {{- with $p.Params.images -}}
   {{- $typ := printf "%T" . -}}
@@ -33,16 +34,16 @@
 {{- end -}}
 {{- $img = $img | absURL -}}
 
-{{- /* robots */ -}}
+{{- /* robots: noindex 파라미터 지원 */ -}}
 {{- $robotsIndex := (cond (isset $p.Params "noindex") (not $p.Params.noindex) true) -}}
 {{- $robots := cond $robotsIndex "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" "noindex,nofollow" -}}
 
-{{- /* dates */ -}}
+{{- /* dates: 존재할 때만 출력 */ -}}
 {{- $published := or $p.Params.date $p.Date -}}
 {{- $modified := or $p.Params.lastmod $p.Lastmod $published -}}
 
-{{- /* type: guide/page 는 Article 취급 */ -}}
-{{- $isArticle := or (eq $p.Type "post") (eq $p.Kind "page") (in (lower $p.File.Path) "/guide/") -}}
+{{- /* Article 판별: post 타입, page kind, 또는 /guide/ 하위 경로 */ -}}
+{{- $isArticle := or (eq $p.Type "post") (eq $p.Kind "page") (hasPrefix (lower $p.RelPermalink) "/guide/") -}}
 
 <!-- ============ Basic / RankMath-like ============ -->
 <title>{{ $title | html }}</title>
@@ -71,12 +72,14 @@
 
 <!-- ============ Breadcrumb JSON-LD ============ -->
 {{- $bc := slice (dict "@type" "ListItem" "position" 1 "name" $siteName "item" $p.Site.BaseURL) -}}
-{{- if gt (len (split (relURL $p.RelPermalink) "/")) 1 -}}
-  {{- $segs := (where (split (relURL $p.RelPermalink) "/") "ne" "") -}}
-  {{- $path := "" -}}
-  {{- range $i, $s := $segs -}}
-    {{- $path = (print $path "/" $s) -}}
-    {{- $bc = $bc | append (dict "@type" "ListItem" "position" (add $i 2) "name" $s "item" (print $p.Site.BaseURL (trim $path "/"))) -}}
+{{- with $p.RelPermalink -}}
+  {{- $segs := (where (split (relURL .) "/") "ne" "") -}}
+  {{- if gt (len $segs) 0 -}}
+    {{- $path := "" -}}
+    {{- range $i, $s := $segs -}}
+      {{- $path = (print $path "/" $s) -}}
+      {{- $bc = $bc | append (dict "@type" "ListItem" "position" (add $i 2) "name" $s "item" (print $p.Site.BaseURL (trim $path "/"))) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 <script type="application/ld+json">
