@@ -1,0 +1,43 @@
+baseURL = "https://okx.joinhelpers.com/"
+title = "OKX 가이드 (2025 최신) | JoinHelpers"
+languageCode = "ko-kr"
+theme = "PaperMod"
+enableRobotsTXT = true
+canonifyURLs = true
+
+[pagination]
+  pagerSize = 12
+
+[outputs]
+  home = ["HTML", "RSS", "JSON", "SITEMAP"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true   # raw HTML 허용 (리다이렉트용)
+
+[params]
+  env = "production"
+  defaultTheme = "auto"
+  ShowReadingTime = false
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowToc = true
+  comments = false
+  description = "OKX 가입·수수료·이용·KYC까지 한 번에 끝내는 2025 최신 공식 가이드"
+  author = "JoinHelpers"
+  images = ["images/og-cover.png"]
+  mainSections = []
+
+  [params.advertiser]
+    name  = "Joomi Kim"
+    email = "joomi.kim.seo@gmail.com"
+
+  [params.assets]
+    favicon = "/favicon.ico"  # 기본 파비콘
+
+[sitemap]
+  changefreq = "daily"
+  priority   = 0.5
+  filename   = "sitemap.xml"
