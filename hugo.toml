@@ -31,8 +31,8 @@ canonifyURLs = true
   mainSections = []
 
   [params.advertiser]
-    name  = "Joomi Kim"
-    email = "joomi.kim.seo@gmail.com"
+    name  = "김민수"
+    email = "pepsi4040@naver.com"
 
   [params.assets]
     favicon = "/favicon.ico"  # 기본 파비콘
