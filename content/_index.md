@@ -55,6 +55,7 @@ build:
       초보자도 가능한 단계별 가입 · 본인인증 · 보안설정 가이드<br/>
       모바일 기준으로 <strong>3단계</strong>면 가입 완료!
     </p>
+
     <div class="hero-cta">
       <a href="https://www.okx.com/join/94891319"
          onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
@@ -65,6 +66,7 @@ build:
       </a>
       <p class="cta-note">※ 본 링크는 OKX 공식 제휴 링크입니다.</p>
     </div>
+
     <!-- 3단계 요약 카드 -->
     <div class="steps-card">
       <ol>
@@ -78,7 +80,7 @@ build:
            target="_blank"
            rel="noopener nofollow sponsored"
            class="okx-btn">
-           💎 평생 수수료 20% 할인 받기
+           🚀 지금 가입하고 혜택 적용하기
         </a>
         <p class="cta-note">※ 신규 가입 후 KYC 인증 시 프로모션 자동 적용</p>
       </div>
@@ -101,7 +103,7 @@ OKX 거래소 가입 방법을 준비하는 분들을 위한 교육용 가이드
        target="_blank"
        rel="noopener nofollow sponsored"
        onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')">
-      🚀 지금 가입하고 혜택 적용하기
+      🖤 OKX 공식 페이지 바로가기
     </a>
   </div>
 </div>
@@ -209,11 +211,15 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 > ⚠️ **면책 고지 (Disclaimer)**  
 > 본 페이지는 **투자 권유 목적이 아닌, 교육 및 정보 제공용 콘텐츠**입니다.  
 > 실제 거래 및 투자 행위는 사용자의 판단과 책임에 따라 진행되며,  
-> 본 페이지는 Bybit 거래소와 직접적인 제휴 관계를 가지지 않습니다.  
+> 본 페이지는 OKX 거래소와 직접적인 제휴 관계를 가지지 않습니다.
+
 ---
 
 <!-- ===== 스타일 ===== -->
 <style>
+/* 전역 기본: 모바일 고정 CTA를 초기 렌더에서 반드시 숨김 (FOUC 방지) */
+#okx-cta-fixed { display:none !important; }
+
 /* Hero */
 .hero-okx{
   background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
@@ -224,6 +230,13 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 .hero-okx .hero-title{ font-size: clamp(24px, 3.2vw, 36px); margin:0 0 10px; font-weight:800; }
 .hero-okx .hero-sub{ font-size: clamp(14px, 2vw, 17px); color:#ddd; margin:0 0 18px; line-height:1.7; }
 .hero-okx .hero-cta{ margin: 12px 0 2px; }
+
+/* PaperMod 등의 전역 타이포가 히어로 H1을 덮는 경우 대비 */
+.post-content .hero-okx .hero-title{
+  color:#fff !important; opacity:1 !important; text-shadow:none !important;
+  -webkit-text-fill-color:#fff !important; mix-blend-mode:normal !important;
+}
+.post-content .hero-okx .hero-sub{ color:#ddd !important; opacity:1 !important; }
 
 .okx-btn{
   display:inline-block; background:#000; color:#fff; font-weight:800;
@@ -242,7 +255,7 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
   margin:18px auto 0; padding:16px; max-width:720px;
   border:1px solid #1a1a1a; border-radius:16px; background:rgba(255,255,255,.02);
 }
-.steps-card ol{ margin:0; padding-left:18px; font-weight:700; line-height:1.8; }
+.steps-card ol{ margin:0; padding-left:18px; font-weight:700; line-height:1.8; color:#fff; }
 .steps-cta{ text-align:center; margin-top:12px; }
 
 /* 본문 공통 CTA 래퍼 */
@@ -251,37 +264,56 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
   margin: 28px 0 14px;
 }
 
+/* 모바일 하단 고정 CTA: 모바일에서만 사용 */
 @media (max-width: 768px){
- #okx-cta-fixed{
-   white-space: nowrap; /* 🔹 한 줄 고정 */
-   display:none;
+  #okx-cta-fixed{
     position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
     background:#000; color:#fff; padding:12px 24px; border-radius:9999px;
     font-weight:800; font-size:16px; text-decoration:none; z-index:9999;
     box-shadow:0 2px 6px rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.08);
-   transition:opacity 0.3s ease;
- }
+    white-space:nowrap;
+    opacity:0;                    /* 스무스 표시 대비 */
+    transition:opacity .25s ease;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); /* iOS 홈바 보정 */
+  }
 }
+
 /* 다크모드 보정 */
 @media (prefers-color-scheme: dark){
   .okx-btn{ background:#0b0b0b; color:#fff; }
 }
 </style>
 
-<script>
-window.addEventListener('scroll', function(){
-  const btn = document.getElementById('okx-cta-fixed');
-  if(window.scrollY > 400){ btn.style.display='block'; btn.style.opacity='1'; }
-  else { btn.style.display='none'; btn.style.opacity='0'; }
-});
-</script>
-
-<!-- 모바일 하단 고정 CTA -->
+<!-- 모바일 하단 고정 CTA: 초기 인라인 숨김(이중 안전장치) -->
 <a id="okx-cta-fixed"
+   style="display:none"
    href="https://www.okx.com/join/94891319"
    onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
    target="_blank" rel="noopener nofollow sponsored">
    ⚡ KYC 인증까지 완료하고 평생 수수료 20% 할인 받기
 </a>
 
+<!-- 스크립트: 모바일에서만 스크롤 400px 이후 노출 -->
+<script>
+(function(){
+  const btn = document.getElementById('okx-cta-fixed');
+  if (!btn) return;
 
+  function toggleCTA(){
+    // 데스크톱에서는 무조건 숨김
+    if (window.innerWidth > 768) { btn.style.display = 'none'; return; }
+
+    if (window.scrollY > 400){
+      btn.style.display = 'block';
+      requestAnimationFrame(()=>{ btn.style.opacity = '1'; });
+    } else {
+      btn.style.opacity = '0';
+      setTimeout(()=>{ if (window.scrollY <= 400) btn.style.display = 'none'; }, 250);
+    }
+  }
+
+  toggleCTA();
+  window.addEventListener('scroll', toggleCTA, {passive:true});
+  window.addEventListener('resize', toggleCTA);
+})();
+</script>
