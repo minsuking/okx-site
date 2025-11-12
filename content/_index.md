@@ -55,7 +55,6 @@ build:
       초보자도 가능한 단계별 가입 · 본인인증 · 보안설정 가이드<br/>
       모바일 기준으로 <strong>3단계</strong>면 가입 완료!
     </p>
-
     <div class="hero-cta">
       <a href="https://www.okx.com/join/94891319"
          onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
@@ -66,7 +65,6 @@ build:
       </a>
       <p class="cta-note">※ 본 링크는 OKX 공식 제휴 링크입니다.</p>
     </div>
-
     <!-- 3단계 요약 카드 -->
     <div class="steps-card">
       <ol>
