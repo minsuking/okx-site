@@ -296,6 +296,8 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 /* 모바일 하단 고정 CTA */
 @media (max-width:768px){
   #okx-cta-fixed{
+    display:block !important;
+    opacity:0;
     position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
     background:linear-gradient(90deg,#00e5a6,#00ffa3);
     color:#000; padding:12px 24px; border-radius:9999px;
