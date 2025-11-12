@@ -261,11 +261,31 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 
 /* Steps card */
 .steps-card{
-  margin:18px auto 0; padding:16px; max-width:720px;
-  border:1px solid #1a1a1a; border-radius:16px; background:rgba(255,255,255,.02);
+  margin:18px auto 0;
+  padding:18px 20px;
+  max-width:720px;
+  border:1px solid rgba(0,255,163,.25);
+  border-radius:16px;
+  background:rgba(255,255,255,.04);
+  box-shadow:0 4px 20px rgba(0,255,163,.06);
+  transition:box-shadow .3s ease, transform .2s ease;
 }
-.steps-card ol{ margin:0; padding-left:18px; font-weight:700; line-height:1.8; color:#fff; }
-.steps-cta{ text-align:center; margin-top:12px; }
+.steps-card:hover{
+  box-shadow:0 8px 28px rgba(0,255,163,.12);
+  transform:translateY(-2px);
+}
+.steps-card ol{
+  margin:0;
+  padding-left:20px;
+  font-weight:700;
+  line-height:1.8;
+  color:#fff;
+}
+.steps-cta{
+  text-align:center;
+  margin-top:14px;
+}
+
 
 /* CTA note */
 .cta-note{ font-size:12px; color:#aaa; margin-top:8px; }
