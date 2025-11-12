@@ -16,9 +16,7 @@ keywords:
   - "okx 회원가입"
 robots: "index, follow"
 canonicalURL: "https://okx.joinhelpers.com"
-outputs:
-  - "HTML"
-
+outputs: ["HTML"]
 build:
   render: "always"
   list: "always"
@@ -27,9 +25,9 @@ build:
 
 <!-- 전환 + 딜레이 이동 공용 함수 (OKX 전용) -->
 <script>
-  // GA4 & Ads가 Google 태그로 연결되어 있다는 전제
-  // Ads 전환 라벨만 교체해서 쓰면 됨 (send_to: 'AW-XXXXXXXXXXX/<OKX라벨>')
-  let jhOkxLocked = false; // 🔒 중복 클릭 방지
+  // Google 태그 연결 전제. Ads 전환 라벨만 교체해서 사용.
+  // 예) gtag('event','conversion', {'send_to': 'AW-XXXXXXXXXXX/OKX_LABEL'});
+  let jhOkxLocked = false;
 
   function jhConvGoOkx(url){
     if (jhOkxLocked) return false;
@@ -37,26 +35,19 @@ build:
 
     try {
       if (typeof gtag === 'function') {
-        // 리포팅용 GA4 이벤트
         gtag('event','click_register_button',{method:'okx_cta'});
         gtag('event','sign_up',{method:'okx_cta'});
-
-        // Google Ads 전환 (라벨 교체 필요)
-        gtag('event','conversion', {'send_to': 'AW-XXXXXXXXXXX/OKX_LABEL'});
+        gtag('event','conversion', {'send_to': 'AW-XXXXXXXXXXX/OKX_LABEL'}); // ← 교체
       }
-    } catch (e) { /* pass */ }
+    } catch (e) {}
 
-    // 1초 후 새 탭 열기
-    setTimeout(() => { window.open(url, '_blank'); }, 1000);
-
-    // 30초 후 잠금 해제
-    setTimeout(() => { jhOkxLocked = false; }, 30000);
-
-    return false; // a 기본 이동 막기
+    setTimeout(() => { window.open(url, '_blank'); }, 1000);   // 1초 지연 후 새 탭
+    setTimeout(() => { jhOkxLocked = false; }, 30000);         // 30초 잠금 해제
+    return false;
   }
 </script>
 
-<!-- ===== Hero(프론티어) 섹션: Bybit 버전과 유사한 첫 화면 ===== -->
+<!-- ===== Hero(프론티어) 섹션 ===== -->
 <section class="hero-okx">
   <div class="hero-inner">
     <h1 class="hero-title">OKX 거래소 가입 & KYC (5분 완성)</h1>
@@ -65,36 +56,36 @@ build:
       모바일 기준으로 <strong>3단계</strong>면 가입 완료!
     </p>
     <div class="hero-cta">
-      <a href="/go/okx-next/"
-         onclick="return jhConvGoOkx('/go/okx-next/')"
+      <a href="https://www.okx.com/join/94891319"
+         onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
          target="_blank"
          rel="noopener nofollow sponsored"
          class="okx-btn okx-btn-lg">
-         🖤 공식 페이지에서 혜택 확인하기
+         💎 평생 수수료 20% 할인 받기
       </a>
-      <p class="cta-note">※ 본 링크는 OKX 공식 안내용 이동 링크입니다.</p>
+      <p class="cta-note">※ 본 링크는 OKX 공식 제휴 링크입니다.</p>
     </div>
     <!-- 3단계 요약 카드 -->
     <div class="steps-card">
       <ol>
         <li>공식 페이지 열기</li>
         <li>이메일/휴대폰으로 계정 만들기</li>
-        <li>KYC 인증 완료 (약 2~5분)</li>
+        <li>KYC 인증 후 <strong>신규 프로모션 자동 적용</strong></li>
       </ol>
       <div class="steps-cta">
-        <a href="/go/okx-next/"
-           onclick="return jhConvGoOkx('/go/okx-next/')"
+        <a href="https://www.okx.com/join/94891319"
+           onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
            target="_blank"
            rel="noopener nofollow sponsored"
            class="okx-btn">
-           🚀 지금 시작 (3단계)
+           💎 평생 수수료 20% 할인 받기
         </a>
+        <p class="cta-note">※ 신규 가입 후 KYC 인증 시 프로모션 자동 적용</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 목차 (원하면 숨김 가능) -->
 {{< toc >}}
 
 ---
@@ -104,15 +95,15 @@ build:
 OKX 거래소 가입 방법을 준비하는 분들을 위한 교육용 가이드 — 모바일 가입 방법, 본인인증(KYC) 방법, 보안 설정 방법까지 단계별로 정리했습니다.
 
 <div align="center">
-<div class="okx-cta">
-  <a href="/go/okx-next/"
-     class="okx-btn"
-     target="_blank"
-     rel="noopener nofollow sponsored"
-     onclick="return jhConvGoOkx('/go/okx-next/')">
-    🖤 OKX 공식 페이지 이동하기
-  </a>
-</div>
+  <div class="okx-cta">
+    <a href="https://www.okx.com/join/94891319"
+       class="okx-btn"
+       target="_blank"
+       rel="noopener nofollow sponsored"
+       onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')">
+      🚀 지금 가입하고 혜택 적용하기
+    </a>
+  </div>
 </div>
 
 ## 1️⃣ OKX 거래소란 무엇인가요?
@@ -204,20 +195,20 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 서비스 이용 시 발생하는 손익에 대한 책임은 사용자 본인에게 있습니다.
 
 <div align="center">
-<div class="okx-cta">
-  <a href="/go/okx-next/"
-     class="okx-btn"
-     target="_blank"
-     rel="noopener nofollow sponsored"
-     onclick="return jhConvGoOkx('/go/okx-next/')">
-    🖤 OKX 공식 홈페이지 바로가기
-  </a>
-</div>
+  <div class="okx-cta">
+    <a href="https://www.okx.com/join/94891319"
+       class="okx-btn"
+       target="_blank"
+       rel="noopener nofollow sponsored"
+       onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')">
+      🖤 OKX 공식 페이지 바로가기
+    </a>
+  </div>
 </div>
 
 ---
 
-<!-- ===== 스타일: Bybit 느낌 유지 + OKX 블랙 톤 ===== -->
+<!-- ===== 스타일 ===== -->
 <style>
 /* Hero */
 .hero-okx{
@@ -229,6 +220,7 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 .hero-okx .hero-title{ font-size: clamp(24px, 3.2vw, 36px); margin:0 0 10px; font-weight:800; }
 .hero-okx .hero-sub{ font-size: clamp(14px, 2vw, 17px); color:#ddd; margin:0 0 18px; line-height:1.7; }
 .hero-okx .hero-cta{ margin: 12px 0 2px; }
+
 .okx-btn{
   display:inline-block; background:#000; color:#fff; font-weight:800;
   letter-spacing:.2px; padding:14px 24px; border-radius:14px; text-decoration:none;
@@ -241,7 +233,7 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 
 .cta-note{ font-size:12px; color:#aaa; margin-top:8px; }
 
-/* Steps card (Bybit의 3단계 박스와 유사) */
+/* Steps card */
 .steps-card{
   margin:18px auto 0; padding:16px; max-width:720px;
   border:1px solid #1a1a1a; border-radius:16px; background:rgba(255,255,255,.02);
@@ -249,32 +241,49 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 .steps-card ol{ margin:0; padding-left:18px; font-weight:700; line-height:1.8; }
 .steps-cta{ text-align:center; margin-top:12px; }
 
-/* 본문 공통 CTA */
+/* 본문 공통 CTA 래퍼 */
 .okx-cta{
   display:flex; justify-content:center; align-items:center;
   margin: 28px 0 14px;
 }
 
-/* 모바일 하단 고정 CTA (옵션) */
+> ⚠️ **면책 고지 (Disclaimer)**  
+> 본 페이지는 **투자 권유 목적이 아닌, 교육 및 정보 제공용 콘텐츠**입니다.  
+> 실제 거래 및 투자 행위는 사용자의 판단과 책임에 따라 진행되며,  
+> 본 페이지는 Bybit 거래소와 직접적인 제휴 관계를 가지지 않습니다.  
+
+<style>
 @media (max-width: 768px){
-  #okx-cta-fixed{
+ #okx-cta-fixed{
+   white-space: nowrap; /* 🔹 한 줄 고정 */
+   display:none;
     position:fixed; bottom:16px; left:50%; transform:translateX(-50%);
     background:#000; color:#fff; padding:12px 24px; border-radius:9999px;
     font-weight:800; font-size:16px; text-decoration:none; z-index:9999;
     box-shadow:0 2px 6px rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.08);
-  }
+   transition:opacity 0.3s ease;
+ }
 }
-
 /* 다크모드 보정 */
 @media (prefers-color-scheme: dark){
   .okx-btn{ background:#0b0b0b; color:#fff; }
 }
 </style>
 
-<!-- 모바일 고정 CTA (원하면 활성화) -->
+<script>
+window.addEventListener('scroll', function(){
+  const btn = document.getElementById('okx-cta-fixed');
+  if(window.scrollY > 400){ btn.style.display='block'; btn.style.opacity='1'; }
+  else { btn.style.display='none'; btn.style.opacity='0'; }
+});
+</script>
+
+<!-- 모바일 하단 고정 CTA -->
 <a id="okx-cta-fixed"
-   href="/go/okx-next/"
-   onclick="return jhConvGoOkx('/go/okx-next/')"
+   href="https://www.okx.com/join/94891319"
+   onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
    target="_blank" rel="noopener nofollow sponsored">
-   🖤 OKX 가입 시작하기
+   ⚡ KYC 인증까지 완료하고 평생 수수료 20% 할인 받기
 </a>
+
+
