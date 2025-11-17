@@ -52,8 +52,8 @@ build:
       모바일 기준으로 <strong>3단계</strong>면 가입 완료!
     </p>
     <div class="hero-cta">
-      <a href="https://www.okx.com/join/94891319"
-         onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
+      <a href="/go/okx-next/"
+         onclick="return jhConvGoOkx('/go/okx-next/')"
          target="_blank" rel="noopener nofollow sponsored"
          class="okx-btn okx-btn-lg primary">
          💎 평생 수수료 20% 할인 받기
@@ -68,8 +68,8 @@ build:
         <li>KYC 인증 후 <strong>신규 프로모션 자동 적용</strong></li>
       </ol>
       <div class="steps-cta">
-        <a href="https://www.okx.com/join/94891319"
-           onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
+        <a href="/go/okx-next/"
+           onclick="return jhConvGoOkx('/go/okx-next/')"
            target="_blank" rel="noopener nofollow sponsored"
            class="okx-btn secondary">
            🚀 지금 가입하고 혜택 적용하기
@@ -90,11 +90,11 @@ OKX 거래소 가입 방법을 준비하는 분들을 위한 교육용 가이드
 
 <div align="center">
   <div class="okx-cta">
-    <a href="https://www.okx.com/join/94891319"
+    <a href="/go/okx-next/"
        class="okx-btn primary"
        target="_blank"
        rel="noopener nofollow sponsored"
-       onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')">
+       onclick="return jhConvGoOkx('/go/okx-next/')">
       🖤 OKX 공식 페이지 바로가기
     </a>
   </div>
@@ -190,11 +190,11 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 
 <div align="center">
   <div class="okx-cta">
-    <a href="https://www.okx.com/join/94891319"
+    <a href="/go/okx-next/"
        class="okx-btn"
        target="_blank"
        rel="noopener nofollow sponsored"
-       onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')">
+       onclick="return jhConvGoOkx('/go/okx-next/')">
       🖤 OKX 공식 페이지 바로가기
     </a>
   </div>
@@ -311,8 +311,8 @@ OKX는 **글로벌 암호화폐 거래 플랫폼** 중 하나로,
 <!-- 모바일 고정 CTA -->
 <a id="okx-cta-fixed"
    style="display:none"
-   href="https://www.okx.com/join/94891319"
-   onclick="return jhConvGoOkx('https://www.okx.com/join/94891319')"
+   href="/go/okx-next/"
+   onclick="return jhConvGoOkx('/go/okx-next/')"
    target="_blank" rel="noopener nofollow sponsored">
    ⚡ KYC 인증 완료하고 평생 수수료 20% 할인 받기
 </a>
